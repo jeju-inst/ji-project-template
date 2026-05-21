@@ -1,6 +1,6 @@
 # 연구설계심의 양식
 
-JRI 신규 정책연구 과제는 **연구설계심의**를 거친다. 심의용 자료는 표준 양식이 정해져 있으며, 본 scaffold의 `templates/research_plan.docx`는 이를 단순화한 사본이다. 발주처 제출 단계에서는 아래 공식 양식을 사용해야 한다.
+JRI 신규 정책연구 과제는 **연구설계심의**를 거친다. 심의용 자료는 표준 양식이 정해져 있으며, 본 저장소의 `templates/research_plan.docx`는 이를 단순화한 사본이다. 발주처 제출 단계에서는 아래 공식 양식을 사용해야 한다.
 
 ## 공식 양식 (Drive fileId)
 
@@ -14,7 +14,7 @@ JRI 신규 정책연구 과제는 **연구설계심의**를 거친다. 심의용
 | `참고1. 연구설계심의 서식 작성요령.pdf` | pdf | 376KB | `1rnXWyCJRj8s4V2Xz_aH9NboHggZI6YAW` | 작성요령 (pdf) |
 | `[참고]timeline - 2026-정책-ooo-과제명.xlsx` | xlsx | 12KB | `1ucS0rMQ0_qiW_qRgXJhwJZPKqcXaYwux` | 추진일정 표 양식 (먼데이 연동용) |
 
-바이너리 크기 때문에 scaffold 인라인 복사는 하지 않는다. 신규 과제 착수 시 Drive에서 직접 받아 `10.연구설계심의/` 아래에 배치.
+바이너리 크기 때문에 저장소 인라인 복사는 하지 않는다. 신규 과제 착수 시 Drive에서 직접 받아 `10.연구설계심의/` 아래에 배치.
 
 ## 표준 목차 (작성요령 기준)
 
@@ -41,4 +41,4 @@ JRI 신규 정책연구 과제는 **연구설계심의**를 거친다. 심의용
 - `examples/지속가능지표/_출처.md` — 지속가능지표 과제의 초심/재작성 본문 (hwp/docx/pdf) fileId
 - `examples/서귀포/_출처.md` — 서귀포 과제의 본문 fileId
 
-본 scaffold의 `templates/research_plan.docx`는 위 양식의 단순화된 사본으로, 빠른 착수용. 정식 제출 단계에서는 공식 hwp 양식을 사용한다.
+본 저장소의 `templates/research_plan.docx`는 위 양식의 단순화된 사본으로, 빠른 착수용. 정식 제출 단계에서는 공식 hwp 양식을 사용한다.

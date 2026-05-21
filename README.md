@@ -1,4 +1,4 @@
-# ji-project-scaffold
+# ji-project-template
 
 JRI 정책연구 프로젝트의 **공통 폴더 구조**와 **연구계획서(research_plan.docx) 템플릿**을 단일 출처로 관리.
 
@@ -9,7 +9,7 @@ JRI 정책연구 프로젝트의 **공통 폴더 구조**와 **연구계획서(r
 ## 구조
 
 ```
-ji-project-scaffold/
+ji-project-template/
 ├── docs/
 │   ├── folder-structure.md              표준 폴더 구조 명세
 │   ├── report-workflow.md               보고서 단계별 포맷(md→docx→gdoc→hwp) + AI 도구별 제약
@@ -30,13 +30,13 @@ ji-project-scaffold/
 
 ## 신규 과제 시작 동선
 
-### 0. 최초 1회 (scaffold 자체 셋업)
+### 0. 최초 1회 (저장소 자체 셋업)
 
 공통 바이너리 양식(hwp/hwpx/pdf) 캐시를 한 번 받아둠. 이후 모든 신규 과제가 이 캐시를 재사용.
 
 ```bash
 pip install gdown   # 또는 pipx install gdown
-~/dev/ji-project-scaffold/scripts/fetch_jri_templates.sh
+~/dev/ji-project-template/scripts/fetch_jri_templates.sh
 ```
 
 → `templates/common/research-design/`(5개), `templates/common/report/`(3개)에 받아짐. gitignored.
@@ -48,7 +48,7 @@ pip install gdown   # 또는 pipx install gdown
 **(b) Drive 동기화된 `_2026/01.JRI_PM/` 경로에 init 실행**:
 
 ```bash
-~/dev/ji-project-scaffold/scripts/init_project.sh \
+~/dev/ji-project-template/scripts/init_project.sh \
   "/path/to/Drive/_2026/01.JRI_PM" \
   "20260601_정책_아트페스타인제주경제효과"
 ```
@@ -85,7 +85,7 @@ pip install gdown   # 또는 pipx install gdown
 4. (선택) 과제 폴더에 Claude Code 활성화하려면:
    ```bash
    mkdir .claude
-   cp ~/dev/ji-project-scaffold/templates/claude-settings.json.template .claude/settings.json
+   cp ~/dev/ji-project-template/templates/claude-settings.json.template .claude/settings.json
    ```
 5. (선택) 분석 코드 필요하면 `01.code/`에서 `git init` (별도 GitHub 저장소로 분리 가능, 서귀포 과제 사례 참조)
 
@@ -133,7 +133,7 @@ pip install gdown   # 또는 pipx install gdown
 
 JRI 공통 `연구보고서_서식.hwpx`(한글 보고서 서식), `250624_인용표기방법.pdf`(인용 지침) 같은 큰 바이너리는 인라인 복사 대신 `examples/*/​_출처.md`에 Drive fileId를 인덱싱했다. 필요 시 Drive에서 직접 받아 신규 과제 `90.최종보고서/지침/`에 배치.
 
-연구설계심의 단계의 공식 hwp 양식과 작성요령(docx/pdf/hwpx) 역시 바이너리라 fileId만 인덱싱. 표준 목차 요약과 fileId 표는 [`docs/research-design-review.md`](docs/research-design-review.md) 참조. 본 scaffold의 `templates/research_plan.docx`는 이 양식의 단순화된 사본이다 — 빠른 착수용이며 정식 심의 제출은 공식 hwp 양식 사용.
+연구설계심의 단계의 공식 hwp 양식과 작성요령(docx/pdf/hwpx) 역시 바이너리라 fileId만 인덱싱. 표준 목차 요약과 fileId 표는 [`docs/research-design-review.md`](docs/research-design-review.md) 참조. 본 저장소의 `templates/research_plan.docx`는 이 양식의 단순화된 사본이다 — 빠른 착수용이며 정식 심의 제출은 공식 hwp 양식 사용.
 
 ## 변경 절차
 

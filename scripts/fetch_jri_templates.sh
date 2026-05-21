@@ -2,7 +2,7 @@
 # fetch_jri_templates.sh — JRI 공통 표준 양식/지침 바이너리를 Google Drive에서 일괄 다운로드
 #
 # 받는 파일들은 hwp/hwpx/pdf/xlsx 등 0.5MB 안팎의 바이너리라 인라인 복사 불가.
-# scaffold 저장소에는 fileId 목록만 두고, 이 스크립트로 로컬 templates/common/ 캐시에 받음.
+# 이 저장소에는 fileId 목록만 두고, 이 스크립트로 로컬 templates/common/ 캐시에 받음.
 # 받은 파일은 init_project.sh가 신규 과제 폴더로 자동 배치.
 #
 # 사전조건:
