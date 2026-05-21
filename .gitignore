@@ -3,3 +3,6 @@
 *~
 .idea/
 .vscode/
+
+# fetch_jri_templates.sh로 받는 공통 바이너리 캐시 (각자 로컬에서 받음)
+templates/common/

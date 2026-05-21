@@ -1,0 +1,20 @@
+# 본보고서 작성 톤 및 bullet 위계 규칙
+
+본 가이드는 `z0nam/ji-report-standards` 공개 저장소에서 중앙 관리됨. 본 파일은 참조 stub임.
+
+## 참조 URL
+
+* 최신 톤 가이드 (latest): <https://raw.githubusercontent.com/z0nam/ji-report-standards/main/tone/latest.md>
+* 본 프로젝트 적용 버전 (동결): <https://raw.githubusercontent.com/z0nam/ji-report-standards/v2026-05-12-4/tone/latest.md>
+* 인용 표기법: <https://raw.githubusercontent.com/z0nam/ji-report-standards/main/citation/latest.md>
+* 서식 안내: <https://raw.githubusercontent.com/z0nam/ji-report-standards/main/format/latest.md>
+
+## 적용 버전
+
+* 본 프로젝트(`90.최종보고서/`)는 **v2026-05-12-4** 기준 작성 중
+* 저장소 변경 이력은 <https://github.com/z0nam/ji-report-standards/blob/main/CHANGELOG.md>
+
+## 참고
+
+* 가이드 본문은 GitHub raw URL을 통해 인간·AI 도구 모두 접근 가능
+* 변경 제안은 z0nam/ji-report-standards 저장소에 PR로 제출

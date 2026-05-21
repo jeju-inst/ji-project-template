@@ -69,5 +69,45 @@ else
   echo "  warn: 템플릿이 없음: $TEMPLATE_DOCX" >&2
 fi
 
+# 공통 바이너리 양식 배치 (fetch_jri_templates.sh로 받은 캐시가 있을 때만)
+COMMON_RD="$REPO_ROOT/templates/common/research-design"
+COMMON_RP="$REPO_ROOT/templates/common/report"
+
+if [[ -d "$COMMON_RD" ]] && [[ -n "$(ls -A "$COMMON_RD" 2>/dev/null)" ]]; then
+  mkdir -p "10.연구설계심의/_가이드"
+  for src in "$COMMON_RD"/*; do
+    name=$(basename "$src")
+    if [[ "$name" == "연구설계심의_서식_최종"* ]]; then
+      dest="10.연구설계심의/$name"
+    else
+      dest="10.연구설계심의/_가이드/$name"
+    fi
+    if [[ -f "$dest" ]]; then
+      echo "  skip: $dest (이미 존재)"
+    else
+      cp "$src" "$dest"
+      echo "  copy: $dest"
+    fi
+  done
+else
+  echo "  info: templates/common/research-design 비어 있음 — scripts/fetch_jri_templates.sh로 받기"
+fi
+
+if [[ -d "$COMMON_RP" ]] && [[ -n "$(ls -A "$COMMON_RP" 2>/dev/null)" ]]; then
+  mkdir -p "90.최종보고서/지침"
+  for src in "$COMMON_RP"/*; do
+    name=$(basename "$src")
+    dest="90.최종보고서/지침/$name"
+    if [[ -f "$dest" ]]; then
+      echo "  skip: $dest (이미 존재)"
+    else
+      cp "$src" "$dest"
+      echo "  copy: $dest"
+    fi
+  done
+else
+  echo "  info: templates/common/report 비어 있음 — scripts/fetch_jri_templates.sh로 받기"
+fi
+
 echo ""
 echo "완료: $TARGET"
