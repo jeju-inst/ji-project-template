@@ -2,21 +2,65 @@
 # init_project.sh — JRI 정책연구 과제 폴더를 표준 구조로 생성
 #
 # 사용법:
-#   init_project.sh <대상_상위경로> <과제폴더명>
+#   init_project.sh [--type 수탁|내부] <대상_상위경로> <과제폴더명>
 #
 # 예시:
 #   init_project.sh "/Users/me/.../01.JRI_PM" "20260601_정책_아트페스타인제주경제효과"
+#   init_project.sh --type 내부 "/Users/me/.../01.JRI_PM" "20260601_미래기획_생산성플랫폼"
 #
 # 동작:
 #   - 상위경로 아래에 과제폴더 생성 (이미 있으면 그 위에 표준 슬롯만 보강)
 #   - 표준 폴더 슬롯 생성 (10단위)
 #   - 10.연구설계심의/ 안에 research_plan.docx 템플릿 복사
 #   - 기존에 같은 이름의 슬롯이 있으면 그대로 둠 (덮어쓰기 없음)
+#
+# --type:
+#   수탁(기본) → 00.RFP      발주처 RFP·수요조사서 원본이 들어감
+#   내부       → 00.과제기획  내부과제수행계획서·제안서가 들어감
+#                (미래기획·기반과제처럼 발주처가 없어 RFP 자체가 존재하지 않는 과제)
 
 set -euo pipefail
 
+PROJECT_TYPE="수탁"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --type)
+      PROJECT_TYPE="${2:-}"
+      shift 2
+      ;;
+    --type=*)
+      PROJECT_TYPE="${1#*=}"
+      shift
+      ;;
+    -h|--help)
+      sed -n '2,20p' "$0" | sed 's/^# \{0,1\}//'
+      exit 0
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -*)
+      echo "ERROR: 알 수 없는 옵션: $1" >&2
+      exit 1
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+case "$PROJECT_TYPE" in
+  수탁|내부) ;;
+  *)
+    echo "ERROR: --type 은 수탁 또는 내부 (받은 값: $PROJECT_TYPE)" >&2
+    exit 1
+    ;;
+esac
+
 if [[ $# -lt 2 ]]; then
-  echo "Usage: $0 <parent_dir> <project_name>" >&2
+  echo "Usage: $0 [--type 수탁|내부] <parent_dir> <project_name>" >&2
   exit 1
 fi
 
@@ -36,9 +80,16 @@ fi
 mkdir -p "$TARGET"
 cd "$TARGET"
 
+# 00 슬롯은 과제 유형에 따라 갈림 (docs/folder-structure.md 「00 슬롯의 두 갈래」)
+if [[ "$PROJECT_TYPE" == "내부" ]]; then
+  SLOT_00="00.과제기획"
+else
+  SLOT_00="00.RFP"
+fi
+
 # 표준 슬롯 — 10단위, 한글/영문 컨벤션은 자매폴더 빈도 기준
 SLOTS=(
-  "00.RFP"
+  "$SLOT_00"
   "01.code"
   "10.연구설계심의"
   "20.회의"
@@ -110,4 +161,4 @@ else
 fi
 
 echo ""
-echo "완료: $TARGET"
+echo "완료: $TARGET (유형: $PROJECT_TYPE)"
