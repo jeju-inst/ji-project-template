@@ -21,6 +21,7 @@ ji-project-template/
 │   ├── research_plan.docx               연구계획서 원본 템플릿 (단순화 사본)
 │   ├── claude-settings.json.template    Claude Code 보편 설정 템플릿
 │   ├── report-tone-guideline.md.template 보고서 톤 가이드 stub (외부 표준 저장소 링크)
+│   ├── payment-request/                 자문비·발표비 지급요청서(개인 지급 정보) 서식 + 채움 안내
 │   └── common/                          (gitignored) fetch_jri_templates.sh 캐시 — hwp/hwpx/pdf 양식
 ├── examples/
 │   ├── 지속가능지표/                       자매 과제 작업 폴더 가이드 사본 + 90번 지침 인덱스
@@ -130,6 +131,8 @@ pip install gdown   # 또는 pipx install gdown
 `templates/claude-settings.json.template`는 자매 과제 `.claude/settings.json`에 들어 있던 보편 설정의 사본. 신규 과제에서 Claude Code를 쓸 때 `.claude/settings.json`으로 배치하면 됨.
 
 `templates/report-tone-guideline.md.template`는 자매 과제 `90.최종보고서/지침/`에 들어 있던 보고서 톤·서식·인용 표기 가이드의 stub. 본문은 외부 표준 저장소 [`z0nam/ji-report-standards`](https://github.com/z0nam/ji-report-standards)에서 중앙 관리되며, 본 파일은 raw URL 인덱스 역할만 한다. 신규 과제 `90.최종보고서/지침/`에 `report_tone_guideline_<날짜>.md`로 배치하면 됨.
+
+`templates/payment-request/`는 자문·발표·간담회 등에서 외부 위원에게 자문비를 지급할 때 자문위원에게 받아 채우는 개인 지급 정보 서식(hwp). hwp-agent form fill로 자동 채워지는 라벨 슬롯(성명·소속·핸드폰·계좌 등)과 자유 텍스트 필드(회의 기간·건명·금액·서명 날짜) 안내가 [`templates/payment-request/README.md`](templates/payment-request/README.md)에 정리되어 있다. XML 텍스트 치환 파이썬 예시도 포함.
 
 JRI 공통 `연구보고서_서식.hwpx`(한글 보고서 서식), `250624_인용표기방법.pdf`(인용 지침) 같은 큰 바이너리는 인라인 복사 대신 `examples/*/​_출처.md`에 Drive fileId를 인덱싱했다. 필요 시 Drive에서 직접 받아 신규 과제 `90.최종보고서/지침/`에 배치.
 
