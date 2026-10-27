@@ -38,16 +38,16 @@ When a user asks to set up a new project folder (e.g. "새 과제 폴더 만들�
    - Target parent directory: Usually located under the synchronized Google Drive directory (e.g. `_2026/01.JRI_PM/`).
 
 2. **Run `init_project.sh`:**
-   Execute the initialization script located in the repository `scripts/` directory:
+   Execute the initialization script located under `../../scripts/` relative to this skill's base directory (when installed as a plugin, repository files reside in the plugin cache directory, so resolve paths relative to the skill directory):
 
    ```bash
    # Standard commissioned research (default: creates 00.RFP)
-   bash path/to/ji-project-template/scripts/init_project.sh \
+   bash "<skill_base_dir>/../../scripts/init_project.sh" \
      "<parent_dir>" \
      "<project_folder_name>"
 
    # Internal / planning research without external client (creates 00.과제기획)
-   bash path/to/ji-project-template/scripts/init_project.sh --type 내부 \
+   bash "<skill_base_dir>/../../scripts/init_project.sh" --type 내부 \
      "<parent_dir>" \
      "<project_folder_name>"
    ```
@@ -62,7 +62,7 @@ When a user asks to set up a new project folder (e.g. "새 과제 폴더 만들�
 
 When asked for a research plan outline ("연구계획서 틀", "연구설계심의 양식"):
 
-- **Simplified template**: `templates/research_plan.docx` (can be copied into the project's `10.연구설계심의/` folder).
+- **Simplified template**: `../../templates/research_plan.docx` relative to this skill's base directory (can be copied into the project's `10.연구설계심의/` folder).
 - **Official Hangul format**:
   - `연구설계심의_서식_최종(260401).hwp`
   - Writing guide: `참고1. 연구설계심의 서식 작성요령.hwpx` (or `.docx`, `.pdf`)
@@ -79,23 +79,23 @@ When asked for a research plan outline ("연구계획서 틀", "연구설계심�
      - 8. 부록. 연구 개요
   2. Final submission should be placed in `10.연구설계심의/` formatted in HWP/HWPX.
 
-### 2. Common Binary Templates Download (`scripts/fetch_jri_templates.sh`)
+### 2. Common Binary Templates Download (`../../scripts/fetch_jri_templates.sh`)
 
-If the common templates (`templates/common/`) are empty and need to be pulled from Google Drive:
+If the common templates (`../../templates/common/` relative to this skill's base directory) are empty and need to be pulled from Google Drive:
 
 ```bash
 # Requires gdown (pip install gdown / pipx install gdown)
-bash path/to/ji-project-template/scripts/fetch_jri_templates.sh
+bash "<skill_base_dir>/../../scripts/fetch_jri_templates.sh"
 ```
 
 Downloads:
 - `research-design`: Official HWP form, guideline HWPX/DOCX/PDF, timeline XLSX
 - `report`: `연구보고서_서식.hwpx`, citation guideline PDF/HWP
 
-### 3. Payment Request Forms (`templates/payment-request/`)
+### 3. Payment Request Forms (`../../templates/payment-request/`)
 
 When asked for advisor/speaker payment request forms ("자문비 지급요청서", "지급요청서 양식"):
 
-- Template file: `templates/payment-request/지급요청서양식.hwp`
-- Detailed guidance and required fields are documented in `templates/payment-request/README.md`.
+- Template file: `../../templates/payment-request/지급요청서양식.hwp` (relative to this skill's base directory)
+- Detailed guidance and required fields are documented in `../../templates/payment-request/README.md`.
 - Requires: Expert information (name, resident registration number, address, bank account, affiliation, title), payment category (advisory fee, manuscript fee, presentation fee), and bankbook/ID card copies.
