@@ -1,0 +1,10 @@
+{
+  "name": "ji-project-template",
+  "displayName": "연구과제 폴더·서식 (ji-project-template)",
+  "description": "JRI 정책연구 과제의 표준 폴더 구조 생성과 연구계획서·심의 서식 템플릿 배치를 지원한다.",
+  "author": { "name": "Jeju Research Institute", "url": "https://github.com/jeju-inst" },
+  "homepage": "https://github.com/jeju-inst/ji-project-template",
+  "repository": "https://github.com/jeju-inst/ji-project-template",
+  "license": "MIT",
+  "keywords": ["research", "template", "folder-structure", "연구과제", "폴더구조", "연구계획서"]
+}
