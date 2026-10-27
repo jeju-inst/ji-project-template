@@ -68,15 +68,15 @@ When asked for a research plan outline ("연구계획서 틀", "연구설계심�
   - Writing guide: `참고1. 연구설계심의 서식 작성요령.hwpx` (or `.docx`, `.pdf`)
   - Timeline template: `[참고]timeline - 2026-정책-ooo-과제명.xlsx`
 - **Recommended authoring flow**:
-  1. Draft the content in Markdown following the 8 standard sections (see `docs/research-design-review.md` in the repository):
-     - 1. 연구의 필요성 및 목적
-     - 2. 국내외 연구동향
-     - 3. 연구 내용 및 범위
-     - 4. 연구방법
-     - 5. 기대효과 및 활용방안
-     - 6. 연구 추진 일정
-     - 7. 연구진 구성
-     - 8. 주요 선행연구와의 차별성
+  1. Draft the content in Markdown following the 8 standard sections from `docs/research-design-review.md` (작성요령 기준):
+     - 1. 연구 배경 및 목표 (배경, 목적, 최종/세부 목표)
+     - 2. 선행연구 검토 (핵심 선행연구 2~3개 표 및 선행연구와의 차별성)
+     - 3. 연구 내용 및 방법 (세부 내용 What + 방법론 How)
+     - 4. 연구 추진전략 및 추진체계 (추진 도식 + 역할 분담)
+     - 5. 추진일정 및 인력 투입계획 (간트 일정 + 인력 투입계획)
+     - 6. 연구 예산 (인건비, 경비, 일반관리비, 위탁용역비)
+     - 7. 연구 성과 및 기대효과
+     - 8. 부록. 연구 개요
   2. Final submission should be placed in `10.연구설계심의/` formatted in HWP/HWPX.
 
 ### 2. Common Binary Templates Download (`scripts/fetch_jri_templates.sh`)
