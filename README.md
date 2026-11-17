@@ -13,7 +13,8 @@ ji-project-template/
 ├── docs/
 │   ├── folder-structure.md              표준 폴더 구조 명세
 │   ├── report-workflow.md               보고서 단계별 포맷(md→docx→gdoc→hwp) + AI 도구별 제약
-│   └── research-design-review.md        연구설계심의 양식·작성요령 표준 등록 (Drive fileId)
+│   ├── research-design-review.md        연구설계심의 양식·작성요령 표준 등록 (Drive fileId)
+│   └── stage-submissions.md             연구 단계별 제출물·기한·양식 (연구과제 관리지침 기준 + 실무)
 ├── scripts/
 │   ├── init_project.sh                  신규 과제 폴더 생성 스크립트
 │   └── fetch_jri_templates.sh           gdown으로 공통 바이너리 양식 일괄 다운로드
@@ -104,6 +105,10 @@ pip install gdown   # 또는 pipx install gdown
 2. **인용 표기**: `250624_인용표기방법.pdf` 규칙 따라 정리
 3. **톤 가이드**: `templates/report-tone-guideline.md.template`을 새 과제 `90.최종보고서/지침/`에 복사. 외부 표준 저장소 raw URL을 통해 AI가 톤 가이드 참조 가능
 4. **gdoc 협업 → hwp 최종**: md → 새 gdoc 생성(클로드) → 코멘트·수정(Codex) → hwp 최종(한글). 도구별 제약은 [`docs/report-workflow.md`](docs/report-workflow.md) 참조
+
+## 단계별 제출물
+
+중간심의·외부평가·최종심의·종료 제출 때 무엇을 언제 내는지는 [`docs/stage-submissions.md`](docs/stage-submissions.md) 참조. 예: 최종심의는 연·용심회 1주일 전에 최종보고서·요약본·연구수행계획서·카피킬러 결과확인서 4종을 함께 낸다.
 
 ## 폴더 구조 표준
 
